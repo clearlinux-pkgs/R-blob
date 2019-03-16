@@ -4,7 +4,7 @@
 #
 Name     : R-blob
 Version  : 1.1.1
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/blob_1.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/blob_1.1.1.tar.gz
 Summary  : A Simple S3 Class for Representing Vectors of Binary Data
@@ -12,12 +12,10 @@ Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-prettyunits
 BuildRequires : R-prettyunits
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
-What if you want to put a vector of them in a data frame? The 'blob'
-    package provides the blob object, a list of raw vectors, suitable for
-    use as a column in data frame.
+[![Travis-CI Build Status](https://travis-ci.org/tidyverse/blob.svg?branch=master)](https://travis-ci.org/tidyverse/blob) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/blob)](https://cran.r-project.org/package=blob) [![Coverage Status](https://codecov.io/gh/tidyverse/blob/branch/master/graph/badge.svg)](https://codecov.io/github/tidyverse/blob?branch=master)
 
 %prep
 %setup -q -c -n blob
@@ -27,11 +25,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523291741
+export SOURCE_DATE_EPOCH=1552720711
 
 %install
+export SOURCE_DATE_EPOCH=1552720711
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523291741
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -66,8 +64,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library blob|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  blob || :
 
 
 %files
@@ -92,3 +89,8 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/blob/help/paths.rds
 /usr/lib64/R/library/blob/html/00Index.html
 /usr/lib64/R/library/blob/html/R.css
+/usr/lib64/R/library/blob/tests/testthat.R
+/usr/lib64/R/library/blob/tests/testthat/test-accessors.R
+/usr/lib64/R/library/blob/tests/testthat/test-construction.R
+/usr/lib64/R/library/blob/tests/testthat/test-format.R
+/usr/lib64/R/library/blob/tests/testthat/test-missing.R
