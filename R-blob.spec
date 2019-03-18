@@ -4,13 +4,12 @@
 #
 Name     : R-blob
 Version  : 1.1.1
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/blob_1.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/blob_1.1.1.tar.gz
 Summary  : A Simple S3 Class for Representing Vectors of Binary Data
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-prettyunits
 BuildRequires : R-prettyunits
 BuildRequires : buildreq-R
 
@@ -25,10 +24,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552720711
+export SOURCE_DATE_EPOCH=1552945048
 
 %install
-export SOURCE_DATE_EPOCH=1552720711
+export SOURCE_DATE_EPOCH=1552945048
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
