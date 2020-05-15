@@ -4,7 +4,7 @@
 #
 Name     : R-blob
 Version  : 1.2.1
-Release  : 30
+Release  : 31
 URL      : https://cran.r-project.org/src/contrib/blob_1.2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/blob_1.2.1.tar.gz
 Summary  : A Simple S3 Class for Representing Vectors of Binary Data
@@ -17,33 +17,28 @@ BuildRequires : R-vctrs
 BuildRequires : buildreq-R
 
 %description
-<!-- badges: start -->
-[![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Travis-CI Build
-Status](https://travis-ci.org/tidyverse/blob.svg?branch=master)](https://travis-ci.org/tidyverse/blob)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/blob)](https://cran.r-project.org/package=blob)
-[![Coverage
-Status](https://codecov.io/gh/tidyverse/blob/branch/master/graph/badge.svg)](https://codecov.io/github/tidyverse/blob?branch=master)
-<!-- badges: end -->
+binary object.  What if you want to put a vector of them in a data
+    frame? The 'blob' package provides the blob object, a list of raw
+    vectors, suitable for use as a column in data frame.
 
 %prep
 %setup -q -c -n blob
+cd %{_builddir}/blob
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1579628297
+export SOURCE_DATE_EPOCH=1589582214
 
 %install
-export SOURCE_DATE_EPOCH=1579628297
+export SOURCE_DATE_EPOCH=1589582214
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
