@@ -4,7 +4,7 @@
 #
 Name     : R-blob
 Version  : 1.2.2
-Release  : 45
+Release  : 46
 URL      : https://cran.r-project.org/src/contrib/blob_1.2.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/blob_1.2.2.tar.gz
 Summary  : A Simple S3 Class for Representing Vectors of Binary Data
@@ -30,10 +30,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1640900174
+export SOURCE_DATE_EPOCH=1640982046
 
 %install
-export SOURCE_DATE_EPOCH=1640900174
+export SOURCE_DATE_EPOCH=1640982046
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
