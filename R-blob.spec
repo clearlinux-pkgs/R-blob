@@ -4,7 +4,7 @@
 #
 Name     : R-blob
 Version  : 1.2.4
-Release  : 55
+Release  : 56
 URL      : https://cran.r-project.org/src/contrib/blob_1.2.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/blob_1.2.4.tar.gz
 Summary  : A Simple S3 Class for Representing Vectors of Binary Data
